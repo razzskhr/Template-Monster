@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Construction Co</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.min.css">
+
+	<script src="js/jquery-3.1.0.min.js"></script>
+	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+
+
+	<link rel="stylesheet" href="homeanimate.css">
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+	<script type="text/javascript" src="flipanimate.js"></script>
+
+	<script>
+
+		$(document).ready(function(){
+
+			
+			$(".dropdown").hover(            
+				function() {
+					$('.dropdown-menu', this).stop( true, true ).fadeIn("fast");
+					$(this).toggleClass('open');
+				},
+				function() {
+					$('.dropdown-menu', this).stop( true, true ).fadeOut("fast");
+					$(this).toggleClass('open');
+				});
+
+		});
+
+		
+	</script>
+
+</head>
+<body>
+
+	<!-- Header -->
+
+	<div class="container-fluid" style="background: black;">
+		<div class="row">
+			<div class="col-sm-4" style="padding-left: 0px;">
+				<a href="#" ><img src="logo.png" class="img-rounded"></a>
+			</div>
+			<div class="col-sm-7 " style="margin-top: 50px;">
+				<ul class="list list-inline" style="text-align: right">
+					<li class="active"><a href="#" style="background-color: transparent; text-decoration: none;" class="navAnchorHome">Home</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle navbarAnchors" data-toggle="dropdown" style="background-color: transparent; text-decoration: none;">About us</a>
+						<ul class="dropdown-menu" style="background-color: black;">
+							<li><span style="visibility: hidden;">Dummy1</span></li>
+							<li><span style="visibility: hidden;">Dummy2</span></li>
+							<li class="navAnchorInnerList"><a href="#"  style="text-decoration: none;color: white;">Testimonals</a></li>
+							<li class="navAnchorInnerList"><a href="#"  style="text-decoration: none;color: white;">Archives</a></li>
+							<li class="navAnchorInnerList"><a href="#"  style="text-decoration: none;color: white;">FAQs</a></li>
+						</ul>
+					</li>
+					<li><a href="#" class="navbarAnchors" style="background-color: transparent; text-decoration: none;">Services</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle navbarAnchors" data-toggle="dropdown" style="background-color: transparent; text-decoration: none;">Projects</a>
+						<ul class="dropdown-menu" style="background-color: black;">
+							<li><span style="visibility: hidden;">Dummy1</span></li>
+							<li><span style="visibility: hidden;">Dummy2</span></li>
+							<li class="navAnchorInnerList"><a style="text-decoration: none;color: white;" href="#">Projects 2</a></li>
+							<li class="dropdown navAnchorInnerList"><a style="text-decoration: none;color: white;" href="#" class="dropdown-toggle" data-toggle="dropdown">Projects 3 </a>
+								<!-- <ul class="dropdown-menu pull-right">
+									<li><a href="#">Category 1</a></li>
+									<li><a href="#">Category 2</a></li>
+									<li><a href="#">Category 3</a></li>
+								</ul> -->
+							</li>
+							<li class="navAnchorInnerList"><a style="text-decoration: none;color: white;" href="#">Projects 4</a></li>
+						</ul>
+					</li>
+					<li><a href="#" style="background-color: transparent; text-decoration: none;" class="navbarAnchors">Contacts</a></li>
+					<li><a href="#" style="background-color: transparent; text-decoration: none;" class="navbarAnchors">Blog</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-1" style="margin-top: 40px;">
+				<div class="circle" >
+					<a href="#">
+						<img src="magnify-alt.png" style="position:absolute; right: 56%; top: 18%;">
+					</a>
+				</div>
+				
+			</div>
+		</div>
+
+		
+      	<div class="row" id="searchDiv" style="position: absolute; left:83%; z-index: 1; display: none; padding: 0px; margin: 0px;">
+      		<div class="col-sm-6" style="padding: 0px;">
+      			<input type="text" style="height:43px;" class="form-control" placeholder="Search"></div>
+      		<div class="col-sm-6" >
+      			<div class="square">
+					<a href="">
+						<img src="magnify-alt.png" style="position:absolute; left: 20%; top: 18%;">
+					</a>
+				</div>
+      		</div>
+      	</div>
+
+	</div>
+
+	<!-- Header -->
+
+
+	<!-- Carousel -->
+
+
+
+
+
+	<div class="container-fluid">
+		<div class="container" >
+			<div class="row" style="border-bottom:solid 2px black">
+				<div class="col-sm-3">
+					<h1>PROJECTS 4</h1>
+				</div>
+				<div class="col-sm-4 col-sm-offset-5" style="margin-top: 20px;">
+					<div class="row">
+						<div class="col-sm-4"><h4 style="text-align:right">HOME<span style="margin-left: 5px;">/</span></h4></div>
+						<div class="col-sm-4"><h4 style="text-align:right">PROJECTS<span style="margin-left: 5px;">/</span></h4></div>
+						<div class="col-sm-4"><h4>PROJECTS4</h4></div>
+					</div>
+					
+				</div>
+			</div>
+
+			<br><br><br>
+
+			<div class="row">
+				<div class="col-sm-offset-3 col-sm-6 col-sm-offset-3">
+					<p><span style="font-size:20px;">Categories:</span>
+						<span style="font-size:20px; margin-left: 20px;"><a href="#" data-index="0" class="projects4Link" style="text-decoration:none">Show All</a></span>
+						<span style="font-size:20px; margin-left: 20px;"><a href="#" data-index="1" class="projects4Link" style="text-decoration:none">Category1</a></span>
+						<span style="font-size:20px; margin-left: 20px;"><a href="#" data-index="2" class="projects4Link" style="text-decoration:none">Category2</a></span>
+						<span style="font-size:20px; margin-left: 20px;"><a href="#" data-index="3" class="projects4Link" style="text-decoration:none">Category3</a></span>
+					</p>
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+		<div class="container"  >
+			<div class="row" id="whatWeDoContent1">
+				<div class="col-sm-3 prj4Imgs Category1" > 
+					<div class="imageHover">
+						<a href="#" class="anc md-trigger" data-modal="modal-1">
+							<img style="height:100%; width:100%"  src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/img_1-370x315.jpg" alt="Vestibulum iaculis" > 
+
+							<div style="position:absolute; overflow:hidden;">
+								<img class="rotate" >
+							</div>
+						</a>
+					</div>
+					<h2 style="text-align:center"><span><a href="http://www.facebook.com" title="Vestibulum iaculis">Vestibulum iaculis</a></span></h2>
+					<h4 style="text-align:center;color:#545454">LACINIA / DICTUM</h4>
+					<p>This format perfectly fits in case you need only a single image for your post display. Use Featured image option…</p>
+					<br>
+					<div style="border-bottom:2px solid #545454;"></div>
+				</div>
+
+				<div class="col-sm-3 prj4Imgs Category2" > 
+					<div class="imageHover">
+						<a href="#" class="anc">
+							<img style="height:100%; width:100%" src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/img_3-370x315.jpg" alt="Lacinia est">
+							<div style="position:absolute">
+								<img class="rotate" >
+							</div>
+						</a>
+					</div>
+
+					<h2 style="text-align:center"><a href="http://www.google.com" title="LACINIA EST">LACINIA EST</a></h2>
+					<h4 style="text-align:center;color:#545454">LACINIA / DICTUM</h4> 
+					<p>This format perfectly fits in case you need only a single image for your post display. Use Featured image option…</p>
+					<br>
+					<div style="border-bottom:2px solid #545454;"></div>
+				</div>
+
+				<div class="col-sm-3 prj4Imgs Category3" > 
+					<div class="imageHover">
+						<a href="#" class="anc">
+							<img style="height:100%; width:100%" src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/img_2-370x315.jpg" alt="Elementum velit">
+							<div style="position:absolute">
+								<img class="rotate" >
+							</div>
+						</a>
+					</div>
+
+					<h2 style="text-align:center"><a href="http://www.missionmgr.com" title="ELEMENTUM VELIT">ELEMENTUM VELIT</a></h2>
+					<h4 style="text-align:center;color:#545454">LACINIA / DICTUM</h4> 
+					<p>This format perfectly fits in case you need only a single image for your post display. Use Featured image option…</p>
+					<br>
+					<div style="border-bottom:2px solid #545454;"></div>
+				</div>
+
+				<div class="col-sm-3 prj4Imgs Category1" > 
+					<div class="imageHover">
+						<a href="#" class="anc">
+							<img style="height:100%; width:100%" src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/img_2-370x315.jpg" alt="Elementum velit">
+							<div style="position:absolute">
+								<img class="rotate" >
+							</div>
+						</a>
+					</div>
+
+					<h2 style="text-align:center"><a href="http://www.missionmgr.com" title="ELEMENTUM VELIT">ELEMENTUM VELIT</a></h2>
+					<h4 style="text-align:center;color:#545454">LACINIA / DICTUM</h4> 
+					<p>This format perfectly fits in case you need only a single image for your post display. Use Featured image option…</p>
+					<br>
+					<div style="border-bottom:2px solid #545454;"></div>
+				</div>
+			</div>
+
+			<div class="row" id="whatWeDoContent2">
+				<div class="col-sm-3 prj4Imgs Category1" > 
+					<div class="imageHover">
+						<a href="#" class="anc md-trigger" data-modal="modal-1">
+							<img style="height:100%; width:100%" src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/img_1-370x315.jpg" alt="Vestibulum iaculis" > 
+
+							<div style="position:absolute; overflow:hidden;">
+								<img class="rotate" >
+							</div>
+						</a>
+					</div>
+					<h2 style="text-align:center"><span><a href="http://www.facebook.com" title="Vestibulum iaculis">Vestibulum iaculis</a></span></h2>
+					<h4 style="text-align:center;color:#545454">LACINIA / DICTUM</h4>
+					<p>This format perfectly fits in case you need only a single image for your post display. Use Featured image option…</p>
+					<br>
+					<div style="border-bottom:2px solid #545454;"></div>
+				</div>
+
+				<div class="col-sm-3 prj4Imgs Category1" > 
+					<div class="imageHover">
+						<a href="#" class="anc">
+							<img style="height:100%; width:100%" src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/img_3-370x315.jpg" alt="Lacinia est">
+							<div style="position:absolute">
+								<img class="rotate" >
+							</div>
+						</a>
+					</div>
+
+					<h2 style="text-align:center"><a href="http://www.google.com" title="LACINIA EST">LACINIA EST</a></h2>
+					<h4 style="text-align:center;color:#545454">LACINIA / DICTUM</h4> 
+					<p>This format perfectly fits in case you need only a single image for your post display. Use Featured image option…</p>
+					<br>
+					<div style="border-bottom:2px solid #545454;"></div>
+				</div>
+
+				<div class="col-sm-3 prj4Imgs Category1" > 
+					<div class="imageHover">
+						<a href="#" class="anc">
+							<img style="height:100%; width:100%" src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/img_2-370x315.jpg" alt="Elementum velit">
+							<div style="position:absolute">
+								<img class="rotate" >
+							</div>
+						</a>
+					</div>
+
+					<h2 style="text-align:center"><a href="http://www.missionmgr.com" title="ELEMENTUM VELIT">ELEMENTUM VELIT</a></h2>
+					<h4 style="text-align:center;color:#545454">LACINIA / DICTUM</h4> 
+					<p>This format perfectly fits in case you need only a single image for your post display. Use Featured image option…</p>
+					<br>
+					<div style="border-bottom:2px solid #545454;"></div>
+				</div>
+
+				<div class="col-sm-3 prj4Imgs Category2" > 
+					<div class="imageHover">
+						<a href="#" class="anc">
+							<img style="height:100%; width:100%" src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/img_2-370x315.jpg" alt="Elementum velit">
+							<div style="position:absolute">
+								<img class="rotate" >
+							</div>
+						</a>
+					</div>
+
+					<h2 style="text-align:center"><a href="http://www.missionmgr.com" title="ELEMENTUM VELIT">ELEMENTUM VELIT</a></h2>
+					<h4 style="text-align:center;color:#545454">LACINIA / DICTUM</h4> 
+					<p>This format perfectly fits in case you need only a single image for your post display. Use Featured image option…</p>
+					<br>
+					<div style="border-bottom:2px solid #545454;"></div>
+				</div>
+			</div>
+
+			<div class="row" id="whatWeDoContent3">
+				<div class="col-sm-3 prj4Imgs Category3" > 
+					<div class="imageHover">
+						<a href="#" class="anc md-trigger" data-modal="modal-1">
+							<img style="height:100%; width:100%" src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/img_1-370x315.jpg" alt="Vestibulum iaculis" > 
+
+							<div style="position:absolute; overflow:hidden;">
+								<img class="rotate" >
+							</div>
+						</a>
+					</div>
+					<h2 style="text-align:center"><span><a href="http://www.facebook.com" title="Vestibulum iaculis">Vestibulum iaculis</a></span></h2>
+					<h4 style="text-align:center;color:#545454">LACINIA / DICTUM</h4>
+					<p>This format perfectly fits in case you need only a single image for your post display. Use Featured image option…</p>
+					<br>
+					<div style="border-bottom:2px solid #545454;"></div>
+				</div>
+
+				<div class="col-sm-3 prj4Imgs Category1" > 
+					<div class="imageHover">
+						<a href="#" class="anc">
+							<img style="height:100%; width:100%" src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/img_3-370x315.jpg" alt="Lacinia est">
+							<div style="position:absolute">
+								<img class="rotate" >
+							</div>
+						</a>
+					</div>
+
+					<h2 style="text-align:center"><a href="http://www.google.com" title="LACINIA EST">LACINIA EST</a></h2>
+					<h4 style="text-align:center;color:#545454">LACINIA / DICTUM</h4> 
+					<p>This format perfectly fits in case you need only a single image for your post display. Use Featured image option…</p>
+					<br>
+					<div style="border-bottom:2px solid #545454;"></div>
+				</div>
+
+				<div class="col-sm-3 prj4Imgs Category1" > 
+					<div class="imageHover">
+						<a href="#" class="anc">
+							<img style="height:100%; width:100%" src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/img_2-370x315.jpg" alt="Elementum velit">
+							<div style="position:absolute">
+								<img class="rotate" >
+							</div>
+						</a>
+					</div>
+
+					<h2 style="text-align:center"><a href="http://www.missionmgr.com" title="ELEMENTUM VELIT">ELEMENTUM VELIT</a></h2>
+					<h4 style="text-align:center;color:#545454">LACINIA / DICTUM</h4> 
+					<p>This format perfectly fits in case you need only a single image for your post display. Use Featured image option…</p>
+					<br>
+					<div style="border-bottom:2px solid #545454;"></div>
+				</div>
+
+				<div class="col-sm-3 prj4Imgs Category3" > 
+					<div class="imageHover">
+						<a href="#" class="anc">
+							<img style="height:100%; width:100%" src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/img_2-370x315.jpg" alt="Elementum velit">
+							<div style="position:absolute">
+								<img class="rotate" >
+							</div>
+						</a>
+					</div>
+
+					<h2 style="text-align:center"><a href="http://www.missionmgr.com" title="ELEMENTUM VELIT">ELEMENTUM VELIT</a></h2>
+					<h4 style="text-align:center;color:#545454">LACINIA / DICTUM</h4> 
+					<p>This format perfectly fits in case you need only a single image for your post display. Use Featured image option…</p>
+					<br>
+					<div style="border-bottom:2px solid #545454;"></div>
+				</div>
+			</div>
+		</div>
+		<div> </div>
+	</div>
+
+	
+
+	<br><br>
+
+	<div class="container-fluid" style="background: #746a62">
+		<br><br>
+		<div class="container">
+
+			<span style="color: white; font-size: 20px;">Feel free to contact us:</span>
+
+			<span style="color: white; margin-left: 30px; font-size: 20px;"><span class="glyphicon glyphicon-earphone" style="margin-right: 5px;"></span>+1 959 603 6035</span>
+
+			<span style="color: white; margin-left: 30px; font-size: 20px;"><span class="glyphicon glyphicon-envelope" style="margin-right: 5px;"></span>mail@demolink.org</span>
+
+			<br><br>
+
+			<hr style="opacity: 0.2">
+
+			<br>
+
+			<div class="row">
+				<div class="col-sm-6">
+					<ul class="list-inline">
+						<li class="list-group-item" style="background: transparent; border: none;"><a href="#" style="color: orange; font-size: 20px;">Home</a></li>
+						<li class="list-group-item" style="background: transparent; border: none"><a href="#" style="color: white; font-size: 20px;">About us</a></li>
+						<li class="list-group-item" style="background: transparent; border: none"><a href="#" style="color: white; font-size: 20px;">Services</a></li>
+						<li class="list-group-item" style="background: transparent; border: none"><a href="#" style="color: white; font-size: 20px;">Projects</a></li>
+						<li class="list-group-item" style="background: transparent; border: none"><a href="#" style="color: white; font-size: 20px;">Contact</a></li>
+						<li class="list-group-item" style="background: transparent; border: none"><a href="#" style="color: white; font-size: 20px;">Blog</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-6" >
+					<p style="float:right; color:white;">CONSTRUCTION CO © 2016 Privacy Policy</p>
+				</div>
+			</div>
+
+			<br>
+
+		</div>
+	</div>
+
+
+
+	</body>
+	</html>
+
