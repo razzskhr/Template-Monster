@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Construction Co</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+
+
+
+	<link rel="stylesheet" href="homeanimate.css">
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+	<script type="text/javascript" src="flipanimate.js"></script>
+
+
+
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+
+	<script>
+
+		$(document).ready(function(){
+
+			$('#homeCarousel').carousel({
+				interval:2000,
+				pause: "false"
+			});
+
+			$(".dropdown").hover(            
+				function() {
+					$('.dropdown-menu', this).stop( true, true ).fadeIn("fast");
+					$(this).toggleClass('open');
+				},
+				function() {
+					$('.dropdown-menu', this).stop( true, true ).fadeOut("fast");
+					$(this).toggleClass('open');
+				});
+
+		});
+
+		var myCenter=new google.maps.LatLng(45.434046,12.340284);
+
+		function initialize()
+		{
+			var mapProp = {
+				scrollwheel: false;
+				center:myCenter,
+				zoom:18,
+				mapTypeId:google.maps.MapTypeId.HYBRID
+			};
+
+			var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+		}
+
+		google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
+
+</head>
+<body>
+
+	<!-- Header -->
+
+	<div class="container-fluid" style="background: black;">
+		<div class="row">
+			<div class="col-sm-4" style="padding-left: 0px;">
+				<a href="#" ><img src="logo.png" class="img-rounded"></a>
+			</div>
+			<div class="col-sm-7 " style="margin-top: 50px;">
+				<ul class="list list-inline" style="text-align: right">
+					<li class="active"><a href="#" style="background-color: transparent; text-decoration: none;" class="navAnchorHome">Home</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle navbarAnchors" data-toggle="dropdown" style="background-color: transparent; text-decoration: none;">About us</a>
+						<ul class="dropdown-menu" style="background-color: black;">
+							<li><span style="visibility: hidden;">Dummy1</span></li>
+							<li><span style="visibility: hidden;">Dummy2</span></li>
+							<li class="navAnchorInnerList"><a href="#"  style="text-decoration: none;color: white;">Testimonals</a></li>
+							<li class="navAnchorInnerList"><a href="#"  style="text-decoration: none;color: white;">Archives</a></li>
+							<li class="navAnchorInnerList"><a href="#"  style="text-decoration: none;color: white;">FAQs</a></li>
+						</ul>
+					</li>
+					<li><a href="#" class="navbarAnchors" style="background-color: transparent; text-decoration: none;">Services</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle navbarAnchors" data-toggle="dropdown" style="background-color: transparent; text-decoration: none;">Projects</a>
+						<ul class="dropdown-menu" style="background-color: black;">
+							<li><span style="visibility: hidden;">Dummy1</span></li>
+							<li><span style="visibility: hidden;">Dummy2</span></li>
+							<li class="navAnchorInnerList"><a style="text-decoration: none;color: white;" href="#">Projects 2</a></li>
+							<li class="dropdown navAnchorInnerList"><a style="text-decoration: none;color: white;" href="#" class="dropdown-toggle" data-toggle="dropdown">Projects 3 </a>
+								<!-- <ul class="dropdown-menu pull-right">
+									<li><a href="#">Category 1</a></li>
+									<li><a href="#">Category 2</a></li>
+									<li><a href="#">Category 3</a></li>
+								</ul> -->
+							</li>
+							<li class="navAnchorInnerList"><a style="text-decoration: none;color: white;" href="#">Projects 4</a></li>
+						</ul>
+					</li>
+					<li><a href="#" style="background-color: transparent; text-decoration: none;" class="navbarAnchors">Contacts</a></li>
+					<li><a href="#" style="background-color: transparent; text-decoration: none;" class="navbarAnchors">Blog</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-1" style="margin-top: 40px;">
+				<div class="circle" >
+					<a href="#">
+						<img src="magnify-alt.png" style="position:absolute;margin-left: 10px;margin-top: 7px ">
+					</a>
+				</div>
+				
+			</div>
+		</div>
+
+		
+      	<div class="row" id="searchDiv" style="position: absolute; left:83%; z-index: 1; display: none; padding: 0px; margin: 0px;">
+      		<div class="col-sm-6" style="padding: 0px;">
+      			<input type="text" style="height:43px;" class="form-control" placeholder="Search"></div>
+      		<div class="col-sm-6" >
+      			<div class="square">
+					<a href="">
+						<img src="magnify-alt.png" style="position:absolute; left: 20%; top: 18%;">
+					</a>
+				</div>
+      		</div>
+      	</div>
+
+	</div>
+
+	<!-- Header -->
+
+
+	<!-- Carousel -->
+<div class="container-fluid" style="padding: 0px;">
+        <div id="carousel" class="carousel slide carousel-fade" style="height: 800px" data-ride="carousel" data-interval="4000" data-pause="false">
+             
+            <!-- Carousel items -->
+            <div class="carousel-inner" style="height: 100%;">
+                <div class="active item" style="height: 100%;">
+                    <img src="ConstructImages/architecture-768432_1920.jpg" style="height: 100%;width: 100%" alt="Cinque Terre">
+                    <div class="container contentOnImage" style="height: 50%; width: 30%; position: absolute; left: 50%; top: 25%; background: rgba(0,0,0,0.6); color: white;">
+                        <div class="container" style="height: 100%; width: 100%;">
+                            <div class="row">
+                            <h1 style="text-align: center; font-size: 70px"><b>Yes !</b></h1>
+                            <br>
+                            <p style="text-align: center;  font-size: 40px"><b>We are ready to satisfy your project requirements.</b></p>
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel" data-slide-to="1"></li>
+                                <li data-target="#carousel" data-slide-to="2"></li>
+                            </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" style="height: 100%;">
+                    <img src="ConstructImages/construction-tractor-excavator-site (2).jpg" style="height: 100%;width: 100%" alt="Cinque Terre">
+                    <div class="container contentOnImage" style="height: 50%; width: 30%; position: absolute; left: 50%; top: 25%; background: rgba(0,0,0,0.6); color: white;">
+                        <div class="container" style="height: 100%; width: 100%;">
+                            <div class="row">
+                            <h1 style="text-align: center; font-size: 70px"><b>Welcome !</b></h1>
+                            <br>
+                            <p style="text-align: center;  font-size: 40px"><b>We are the leaders in construction industry.</b></p>
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel" data-slide-to="0" ></li>
+                                <li data-target="#carousel" data-slide-to="1" class="active"></li>
+                                <li data-target="#carousel" data-slide-to="2"></li>
+                            </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" style="height: 100%;">
+                    <img src="ConstructImages/material-691929_1280.jpg"  style="height: 100%;width: 100%" alt="Cinque Terre">
+                    <div class="container contentOnImage" style="height: 50%; width: 30%; position: absolute; left: 50%; top: 25%; background: rgba(0,0,0,0.6); color: white;">
+                        <div class="container" style="height: 100%; width: 100%;">
+                            <div class="row">
+                            <h1 style="text-align: center; font-size: 70px"><b>Believe !</b></h1>
+                            <br>
+                            <p style="text-align: center;  font-size: 40px"><b>We strive to excellence in service we provide.</b></p>
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel" data-slide-to="0" ></li>
+                                <li data-target="#carousel" data-slide-to="1" ></li>
+                                <li data-target="#carousel" data-slide-to="2" class="active"></li>
+                            </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Carousel nav -->
+            
+        </div>
+    </div>
+
+
+
+
+	<div class="container-fluid" id="whatWeDoDiv">
+		<div>
+			<h1 style="color:orange ; text-align:center;font-size:60px">WHAT WE DO</h1>
+			<p style="text-align:center;color:#545454;line-height: 27px;font-weight: 300;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus</p>
+		</div>
+		<br>
+		<br>
+		<div class="container" id="whatWeDo" >
+			<div class="row" id="whatWeDoContent">
+				<div class="col-lg-4" style="border-bottom:2px solid #545454;"> 
+					<div class="imageHover">
+						<a href="#" class="anc md-trigger" >
+							<img class="whatWeDoImg" src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/img_1-370x315.jpg" alt="Vestibulum iaculis" > 
+
+							<div style="position:absolute">
+								<img class="rotate" >
+							</div>
+						</a>
+
+
+						
+
+
+					</div>
+					<h2 style="text-align:center"><span><a href="http://www.facebook.com" style="text-decoration: none;" title="Vestibulum iaculis">Vestibulum iaculis</a></span></h2>
+					<h4 style="text-align:center;color:#545454">LACINIA / DICTUM</h4> 
+					<br>
+					<div ></div>
+				</div>
+
+				<div class="col-lg-4" > 
+					<div class="imageHover">
+						<a href="#" class="anc">
+							<img src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/img_3-370x315.jpg" alt="Lacinia est">
+							<div style="position:absolute">
+								<img class="rotate" >
+							</div>
+						</a>
+					</div>
+
+					<h2 style="text-align:center"><a href="http://www.google.com" title="LACINIA EST" style="text-decoration: none;">LACINIA EST</a></h2>
+					<h4 style="text-align:center;color:#545454">LACINIA / DICTUM</h4> 
+					<br>
+					<div style="border-bottom:2px solid #545454;"></div>
+				</div>
+
+				<div class="col-lg-4" > 
+					<div class="imageHover">
+						<a href="#" class="anc">
+							<img src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/img_2-370x315.jpg" alt="Elementum velit">
+							<div style="position:absolute">
+								<img class="rotate" >
+							</div>
+						</a>
+					</div>
+
+					<h2 style="text-align:center"><a href="http://www.missionmgr.com" style="text-decoration: none;" title="ELEMENTUM VELIT">ELEMENTUM VELIT</a></h2>
+					<h4 style="text-align:center;color:#545454">LACINIA / DICTUM</h4> 
+					<br>
+					<div style="border-bottom:2px solid #545454;"></div>
+					
+				</div>
+			</div>
+		</div>
+		<div> </div>
+	</div>
+
+	<br><br>
+
+	<div class="container" id="ourService">
+		<div>
+			<h1 style="color: orange; text-align: center">OUR SERVICES</h1>
+			<p style="text-align: center; color: #545454">Aenean nonummy hendrerit mauris. Phasellus porta.</p>
+		</div>
+
+		<div class="row" id="ourServicesDiv">
+			<div class="col-sm-6">
+				<ul class="list-group">
+					<li class="list-group-item " style="border: none">
+						<div class="row hoverOn" >
+							<div class="col-sm-9">
+								<h3>Proin dictum 3</h3>
+								<p>Arenean nonummy hendrerit mau phaselntes nascetur ridic ulusm dui fusce feu. Cras vitae neque turpis, in luctus risus. Donec et placerat orci. Praesent pulvinar lectus massa, at dignissim magna. Morbi...</p>
+							</div>
+							<div class="col-sm-3" >
+								<figure class="thumbnail featured-thumbnail" style="max-width:150px; border-radius: 50%; border: 1px solid #fe8301; margin-top: 30px;"><a href="#" title="Proin dictum" >
+									<img   src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/icon_1.png" alt="Proin dictum"></a></figure>
+								</div>
+							</div>
+						</li>
+						<li class="list-group-item "style="border: none">
+							<div class="row hoverOn">
+								<div class="col-sm-9">
+									<h3>Proin dictum</h3>
+									<p>Arenean nonummy hendrerit mau phaselntes nascetur ridic ulusm dui fusce feu. Cras vitae neque turpis, in luctus risus. Donec et placerat orci. Praesent pulvinar lectus massa, at dignissim magna. Morbi...</p>
+								</div>
+								<div class="col-sm-3">
+									<figure class="thumbnail featured-thumbnail" style="max-width:150px;border-radius: 50%; border: 1px solid #fe8301"><a href="http://livedemo00.template-help.com/wordpress_52266/services-view/proin-dictum/" title="Proin dictum"><img src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/icon_1.png" alt="Proin dictum"></a></figure>
+								</div>
+							</div>
+						</li>
+						<li class="list-group-item "style="border: none">
+							<div class="row hoverOn">
+								<div class="col-sm-9">
+									<h3>Proin dictum</h3>
+									<p>Arenean nonummy hendrerit mau phaselntes nascetur ridic ulusm dui fusce feu. Cras vitae neque turpis, in luctus risus. Donec et placerat orci. Praesent pulvinar lectus massa, at dignissim magna. Morbi...</p>
+								</div>
+								<div class="col-sm-3">
+									<figure class="thumbnail featured-thumbnail" style="max-width:150px;border-radius: 50%; border: 1px solid #fe8301"><a href="http://livedemo00.template-help.com/wordpress_52266/services-view/proin-dictum/" title="Proin dictum"><img  src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/icon_1.png" alt="Proin dictum"></a></figure>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-sm-6">
+					<ul class="list-group">
+						<li class="list-group-item "style="border: none">
+							<div class="row hoverOn">
+								<div class="col-sm-9">
+									<h3>Proin dictum</h3>
+									<p>XX Arenean nonummy hendrerit mau phaselntes nascetur ridic ulusm dui fusce feu. Cras vitae neque turpis, in luctus risus. Donec et placerat orci. Praesent pulvinar lectus massa, at dignissim magna. Morbi...</p>
+								</div>
+								<div class="col-sm-3">
+									<figure class="thumbnail featured-thumbnail" style="max-width:150px;border-radius: 50%; border: 1px solid #fe8301; margin-top: 30px;"><a href="http://livedemo00.template-help.com/wordpress_52266/services-view/proin-dictum/" title="Proin dictum"><img src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/icon_1.png" alt="Proin dictum"></a></figure>
+								</div>
+							</div>
+						</li>
+						<li class="list-group-item "style="border: none">
+							<div class="row hoverOn">
+								<div class="col-sm-9">
+									<h3>Proin dictum</h3>
+									<p>Arenean nonummy hendrerit mau phaselntes nascetur ridic ulusm dui fusce feu. Cras vitae neque turpis, in luctus risus. Donec et placerat orci. Praesent pulvinar lectus massa, at dignissim magna. Morbi...</p>
+								</div>
+								<div class="col-sm-3">
+									<figure class="thumbnail featured-thumbnail" style="max-width:150px;border-radius: 50%; border: 1px solid #fe8301"><a href="http://livedemo00.template-help.com/wordpress_52266/services-view/proin-dictum/" title="Proin dictum"><img  src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/icon_1.png" alt="Proin dictum"></a></figure>
+								</div>
+							</div>
+						</li>
+						<li class="list-group-item "style="border: none">
+							<div class="row hoverOn">
+								<div class="col-sm-9">
+									<h3>Proin dictum</h3>
+									<p>Arenean nonummy hendrerit mau phaselntes nascetur ridic ulusm dui fusce feu. Cras vitae neque turpis, in luctus risus. Donec et placerat orci. Praesent pulvinar lectus massa, at dignissim magna. Morbi...</p>
+								</div>
+								<div class="col-sm-3">
+									<figure class="thumbnail featured-thumbnail" style="max-width:150px;border-radius: 50%; border: 1px solid #fe8301"><a href="http://livedemo00.template-help.com/wordpress_52266/services-view/proin-dictum/" title="Proin dictum"><img src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/icon_1.png" alt="Proin dictum"></a></figure>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+
+			<br><br>
+			<div class="content_box center"><a style="text-decoration: none;" href="services" title="view all services" class="btn btn-link btn-normal btn-inline button_sliding_bg" target="_self">view all services</a> <div class="clear"></div></div>
+		</div>
+
+		<br><br>
+
+		<div class="container-fluid" style="background: #eee">
+			<div>
+				<br><br>
+				<h2 style="color:orange ; text-align:center;font-size:50px">OUR PROJECTS</h2>
+				<p style="text-align:center;color:#545454;line-height: 27px;font-weight: 300;">Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis</p><br><br>
+			</div>
+			<div class="container" id="ourProjectsDiv">
+				<div class="row" id="ourProjects">
+					<div class="col-sm-4" style="border-right: 1px dashed black">
+						<div id="op1">
+							<h4>PELLENTESQUE SED</h4><br>
+							<div class="row">
+								<div class="col-sm-4">
+									<a href="#" title="Etiam dictum egestas"><img src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/img_4-84x84.jpg" alt="Etiam dictum egestas"></a>
+								</div>
+								<div class="col-sm-8">
+									<p>Aliquam dapibus tincidunt metus. Praesent justo dolor, lobortis quis, lobortis dignissim, pulvinar ac, lorem. Lorem ipsum dolor sit...</p>
+									<a href="http://livedemo00.template-help.com/wordpress_52266/porta-fusce-suscipit-varius-miurs/etiam-dictum-egestas/" class="btn btn-primary" title="Etiam dictum egestas" style="background: none; border: none; color: orange; padding-left: 0px;">read more &gt;&gt;</a>
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="col-sm-4">
+									<a href="#" title="Etiam dictum egestas"><img src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/img_4-84x84.jpg" alt="Etiam dictum egestas"></a>
+								</div>
+								<div class="col-sm-8">
+									<p>Aliquam dapibus tincidunt metus. Praesent justo dolor, lobortis quis, lobortis dignissim, pulvinar ac, lorem. Lorem ipsum dolor sit...</p>
+									<a href="http://livedemo00.template-help.com/wordpress_52266/porta-fusce-suscipit-varius-miurs/etiam-dictum-egestas/" class="btn btn-primary" title="Etiam dictum egestas" style="background: none; border: none; color: orange; padding-left: 0px;">read more &gt;&gt;</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="row">
+							<div class="col-sm-4" id="op2">
+								<h4 style="margin-left: 25px;">PELLENTESQUE SED</h4><br>
+								<ul>
+									<li >Vestibulum iaculis</li>
+									<li style="margin-top: 10px;">Proin dictum elementu</li>
+									<li style="margin-top: 10px;">Euismod consequat ante</li>
+									<li style="margin-top: 10px;">Ipsum dolor sit amet</li>
+									<li style="margin-top: 10px;">Consectetuer adipiscing</li>
+									<li style="margin-top: 10px;">Pellentesque sed dolor</li>
+									<li style="margin-top: 10px;">Aliquam congue ferment</li>
+									<li style="margin-top: 10px;">Mauris accumsan nulla</li>
+									<li style="margin-top: 10px;">Sed in lacus</li> 
+								</ul>
+							</div>
+							<div class="col-sm-4" id="op3">
+								<h4 style="margin-left: 25px;">PELLENTESQUE SED</h4><br>
+
+								<ul>
+									<li >Vestibulum iaculis</li>
+									<li style="margin-top: 10px;">Proin dictum elementu</li>
+									<li style="margin-top: 10px;">Euismod consequat ante</li>
+									<li style="margin-top: 10px;">Ipsum dolor sit amet</li>
+									<li style="margin-top: 10px;">Consectetuer adipiscing</li>
+									<li style="margin-top: 10px;">Pellentesque sed dolor</li>
+									<li style="margin-top: 10px;">Aliquam congue ferment</li>
+									<li style="margin-top: 10px;">Mauris accumsan nulla</li>
+									<li style="margin-top: 10px;">Sed in lacus</li>
+								</ul>
+							</div>
+							<div class="col-sm-4" id="op4">
+								<h4 style="margin-left: 25px;">PELLENTESQUE SED</h4><br>
+
+								<ul>
+									<li >Vestibulum iaculis</li>
+									<li style="margin-top: 10px;">Proin dictum elementu</li>
+									<li style="margin-top: 10px;">Euismod consequat ante</li>
+									<li style="margin-top: 10px;">Ipsum dolor sit amet</li>
+									<li style="margin-top: 10px;">Consectetuer adipiscing</li>
+									<li style="margin-top: 10px;">Pellentesque sed dolor</li>
+									<li style="margin-top: 10px;">Aliquam congue ferment</li>
+									<li style="margin-top: 10px;">Mauris accumsan nulla</li>
+									<li style="margin-top: 10px;">Sed in lacus</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br><br><br>
+		</div>
+
+
+				<div class="container-fluid">
+			<div>
+				<h1 style="color:orange ; text-align:center;font-size:60px">OUR TEAM</h1>
+				<p style="text-align:center;color:#545454;line-height: 27px;font-weight: 300;">Morbi nunc odio, gravida at, cursus nec, luctus a, loremenas tristique orci ac</p>
+			</div>
+			<br><br>
+
+			<div class="container">
+
+				<div class="row animated fadeInUp">
+					<div class="col-lg-2">
+						<!-- <figure  style="border:none"> -->
+						<div class="imageHover">
+							<a href="" class="anc1">
+							<img class="img-circle" id="imgCircle" src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2014/11/team_1-151x151.jpg" alt="Adam Smith">
+								<div class="img-circle div1" style="position:absolute">
+									<img class="rotate" >
+								</div>
+							</a>
+						</div>
+						<h4 style="text-align:center;color:#545454"><a style="text-decoration: none;color:#545454" href="#" title="Adam Smith">ADAM SMITH</a></h4>
+						<span style="text-align:center;color:#545454">Nulla facilisi. Aenean...</span>
+						<!-- </figure> -->
+					</div>
+					<div class="col-lg-2">
+						<div class="imageHover">
+							<a href="" class="anc1">
+								<img class="img-circle" src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2012/05/team_2-151x151.jpg" alt="Nick Harris">
+								<div class="img-circle div1" style="position:absolute">
+									<img class="rotate" >
+								</div>
+							</a>
+						</div>
+						<h4 style="text-align:center;color:#545454"><a style="text-decoration: none;color:#545454" href="#" title="NICK HARRIS">NICK HARRIS</a></h4>
+						<span style="text-align:center;color:#545454">Nulla facilisi. Aenean...</span>
+						
+					</div>
+					<div class="col-lg-2">
+						<div class="imageHover">
+							<a href="" class="anc1">
+								<img class="img-circle" src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2011/07/team_3-151x151.jpg" alt="Sara Bright">
+								<div class="img-circle div1" style="position:absolute">
+									<img class="rotate" >
+								</div>
+							</a>
+						</div>
+						<h4 style="text-align:center;color:#545454"><a style="text-decoration: none;color:#545454" href="#" title="Sara Bright">SARA BRIGHT</a></h4>
+						<span style="text-align:center;color:#545454">Nulla facilisi. Aenean...</span>
+						
+					</div>
+					<div class="col-lg-2">
+						<div class="imageHover">
+							<a href="" class="anc1">
+								<img class="img-circle" src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2011/07/team_4-151x151.jpg" alt="Ric Williams">
+								<div class="img-circle div1" style="position:absolute">
+									<img class="rotate" >
+								</div>
+							</a>
+						</div>
+						<h4 style="text-align:center;color:#545454"><a style="text-decoration: none;color:#545454" href="#" title="Ric Williams">RIC WILLAMS</a></h4>
+						<span style="text-align:center;color:#545454">Nulla facilisi. Aenean...</span>
+					</figure>
+				</div>
+				<div class="col-lg-2">
+					<div class="imageHover">
+						<a href="" class="anc1">
+							<img class="img-circle" src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2011/07/team_5-151x151.jpg" alt="Brandon Cruz">
+							<div class="img-circle div1" style="position:absolute">
+								<img class="rotate" >
+							</div>
+						</a>
+					</div>
+					<h4 style="text-align:center;color:#545454"><a style="text-decoration: none;color:#545454" href="#" title="Brandon Cruz">BRANDON CRUZ</a></h4>
+					<span style="text-align:center;color:#545454">Nulla facilisi. Aenean...</span>
+
+				</div>
+				<div class="col-lg-2">
+					<div class="imageHover">
+						<a href="" class="anc1">
+							<img class="img-circle"  src="http://livedemo00.template-help.com/wordpress_52266/wp-content/uploads/2011/07/team_6-151x151.jpg" alt="Albert stone">
+							<div class="img-circle div1" style="position:absolute">
+								<img class="rotate" >
+							</div>
+						</a>
+					</div>
+					<h4 style="text-align:center;color:#545454"><a style="text-decoration: none;color:#545454" href="#" title="Albert stone">ALBERT STONE</a></h4>
+					<span style="text-align:center;color:#545454">Nulla facilisi. Aenean...</span>
+
+				</div>
+			</div>
+
+		</div>
+
+		
+		<br> <br> <br>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6" style="border-right:1px inset #545454">
+					<h4 style="color:#545454">
+						Quisque nulla libero porta
+
+					</h4 >
+					<br>
+					<p style="text-align:center;color:#545454">
+						Vestibulum iaculis lacinia est. Proin dictum elemtum velit. Fusceuismod consequat ante. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque sed dolor. Aliquam congue fermentum nisl. Mauris accumsnulla v in lacus ut enim adipiscing aliquet. Nulla venenatis...
+					</p>
+					<div class="row">
+						<div class="col-lg-1">
+							<a href="#" title="google"><img src="http://livedemo00.template-help.com/wordpress_52266/wp-content/themes/theme52266/images/social/google.png" alt="google"></a>
+						</div>
+						<div class="col-lg-1">
+							<a href="#" title="twitter"><img src="http://livedemo00.template-help.com/wordpress_52266/wp-content/themes/theme52266/images/social/twitter.png" alt="twitter"></a>
+						</div>
+						<div class="col-lg-1">
+							<a href="#" title="facebook"><img src="http://livedemo00.template-help.com/wordpress_52266/wp-content/themes/theme52266/images/social/facebook.png" alt="facebook"></a>
+						</div>
+						<div class="col-lg-1">
+							<a href="#" title="pinterest"><img src="http://livedemo00.template-help.com/wordpress_52266/wp-content/themes/theme52266/images/social/pinterest.png" alt="pinterest"></a>
+						</div>
+						<div class="col-lg-1">
+							<a href="#" title="linkedin"><img src="http://livedemo00.template-help.com/wordpress_52266/wp-content/themes/theme52266/images/social/linkedin.png" alt="linkedin"></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<h2 style="color:#545454;">NEWSLETTER SIGNUP</h2>
+					<span> Latest information only. Day by day</span>
+					<br>
+					<br>
+					<div class="row">
+						<div class="col-lg-7">
+							<input type="email" style="height: 45px;" class="form-control" id="pwd" placeholder="Enter your e-mail">
+						</div>
+						<div class="col-lg-5">
+							<input type="submit" style=""  class="btn btn-default aa"  value="SIGN UP">
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+
+		</div>
+
+
+		<br><br>
+
+		<div class="container-fluid" style="background: #746a62">
+			<br><br>
+			<div class="container">
+
+				<span style="color: white; font-size: 20px;">Feel free to contact us:</span>
+
+				<span style="color: white; margin-left: 30px; font-size: 20px;"><span class="glyphicon glyphicon-earphone" style="margin-right: 5px;"></span>+1 959 603 6035</span>
+
+				<span style="color: white; margin-left: 30px; font-size: 20px;"><span class="glyphicon glyphicon-envelope" style="margin-right: 5px;"></span>mail@demolink.org</span>
+
+				<br><br>
+
+				<hr style="opacity: 0.2">
+
+				<br>
+
+				<div class="row">
+					<div class="col-sm-6">
+						<ul class="list-inline">
+							<li class="list-group-item" style="background: transparent; border: none;"><a href="#" style="color: orange; font-size: 20px;">Home</a></li>
+							<li class="list-group-item" style="background: transparent; border: none"><a href="#" style="color: white; font-size: 20px;">About us</a></li>
+							<li class="list-group-item" style="background: transparent; border: none"><a href="#" style="color: white; font-size: 20px;">Services</a></li>
+							<li class="list-group-item" style="background: transparent; border: none"><a href="#" style="color: white; font-size: 20px;">Projects</a></li>
+							<li class="list-group-item" style="background: transparent; border: none"><a href="#" style="color: white; font-size: 20px;">Contact</a></li>
+							<li class="list-group-item" style="background: transparent; border: none"><a href="#" style="color: white; font-size: 20px;">Blog</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-6" >
+						<p style="float:right; color:white;">CONSTRUCTION CO © 2016 Privacy Policy</p>
+					</div>
+				</div>
+
+				<br>
+
+			</div>
+		</div>
+
+		<div class="container-fluid" id="googleMap" style="height:500px;">
+
+		</div>
+
+	</body>
+	</html>
+
